@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :parse
+
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
@@ -22,6 +24,26 @@ class MessagesController < ApplicationController
       flash[:alert] = @message.errors
     #   render "chatrooms/show"
     end
+  end
+
+  def parse
+    question = params[:question]
+    text = ''
+
+    # TODO: validate answer and get a reply
+    if question == "Show me answer for question 1"
+      text = 'Here is the answer for question 1'
+    else
+      text = 'I dont know what you are talking about'
+    end
+
+    question_partial = render_to_string partial: "messages/message_json_right",
+                                        formats: [:html], layout: false, locals: { message: question }
+    answer_partial = render_to_string partial: "messages/message_json_left",
+                                      formats: [:html], layout: false, locals: { message: text }
+    # puts "I am in #parse"
+    # puts answer_partial
+    render json: { question: question_partial, answer: answer_partial }
   end
 
   private
