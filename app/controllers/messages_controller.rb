@@ -39,6 +39,7 @@ class MessagesController < ApplicationController
 
     question_partial = render_to_string partial: "messages/message_json_right",
                                         formats: [:html], layout: false, locals: { message: question }
+    sleep(2)
     answer_partial = render_to_string partial: "messages/message_json_left",
                                       formats: [:html], layout: false, locals: { message: text }
     # puts "I am in #parse"

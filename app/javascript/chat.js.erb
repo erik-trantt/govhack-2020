@@ -2,7 +2,7 @@ const updateMessages = (question, message) => {
   const container = document.getElementById('messages');
   if (!container)
     return;
-  
+
     // console.log("We can insert chat bubble");
   container.insertAdjacentHTML('beforeend', question);
   container.insertAdjacentHTML('beforeend', message);
@@ -14,7 +14,7 @@ const getAnswer = (event) => {
   const input = document.getElementById("chat-id-1-input");
   console.log('getting answer');
 
-  fetch(`/messages`, { 
+  fetch(`/messages`, {
     headers: {
       'Content-Type': 'application/json',
       accept: 'application/json'
@@ -33,7 +33,7 @@ const getAnswer = (event) => {
 const bindToForm = () => {
   const id = "chat-id-1-form";
   const form = document.getElementById(id);
-  
+
   if (form) {
     console.log('binded');
     form.addEventListener('submit', getAnswer);
