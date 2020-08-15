@@ -35,9 +35,7 @@ q_array1 = [
 "Thank you! Based on the answers you've given us, you qualify for COVID-19 Income Relief Payment. Please call Diane on 0800 559 009 and quote the reference number 75346. Diane is expecting your call and has all the information that you've provided."
 ]
 q_array1.each do |q|
-  Question.new(content: q)
-  Question.path = Path.find(1)
-  Question.save!
+  Question.create!(content: q, path_id: 1)
 end
 q_array2 = [
 "Tell us your age to get started",
@@ -48,9 +46,7 @@ q_array2 = [
 "Speak to you soon. I will send you a notification 5 minutes before your call with Manaia."
 ]
 q_array2.each do |q|
-  Question.new(content: q)
-  Question.path = Path.find(2)
-  Question.save!
+  Question.create!(content: q, path_id: 2)
 end
 q_array3 = [
 "I can help you with that! What is your current location?",
@@ -59,9 +55,7 @@ q_array3 = [
 "Great, I've emailed those details across to you."
 ]
 q_array3.each do |q|
-  Question.new(content: q)
-  Question.path = Path.find(3)
-  Question.save!
+  Question.create!(content: q, path_id: 3)
 end
 q_array4 = [
 "If you're struggling to meet your living costs, or get an unexpected bill, we might be able to help you, even if you're working. What can I help you with?",
@@ -69,8 +63,6 @@ q_array4 = [
 "Speak to you soon. I will send you a notification 5 minutes before your call with Manaia."
 ]
 q_array4.each do |q|
-  Question.new(content: q)
-  Question.path = Path.find(4)
-  Question.save!
+  Question.create!(content: q, path_id: 4)
 end
 p "Database seeded succesfully!"
