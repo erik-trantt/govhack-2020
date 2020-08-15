@@ -1,73 +1,73 @@
-<div class="layout">
-<!-- Main Content -->
-<div class="main main-visible" data-mobile-height="">
+<section class="layout">
+    <!-- Main Content -->
+    <div class="main main-visible" data-mobile-height="">
 
-    <!-- Chat -->
-    <div id="chat-1" class="chat dropzone-form-js" data-dz-url="some.php">
+        <!-- Chat -->
+        <div id="chat-1" class="chat dropzone-form-js" data-dz-url="some.php">
 
-        <!-- Chat: body -->
-        <div class="chat-body">
+            <!-- Chat: body -->
+            <div class="chat-body">
 
-            <!-- Chat: Header -->
-            <div class="chat-header border-bottom py-4 py-lg-6 px-lg-8">
-                <div class="container-xxl">
-                    <div class="row align-items-center">
+                <!-- Chat: Header -->
+                <div class="chat-header border-bottom py-4 py-lg-6 px-lg-8">
+                    <div class="container-xxl">
+                        <div class="row align-items-center">
 
-                        <!-- Chat photo -->
-                        <div class="col-6 col-xl-6">
-                            <div class="media text-center text-xl-left">
-                                <div class="avatar avatar-sm d-none d-xl-inline-block mr-5">
-                                    <%=image_tag("logo.jpeg")%>
+                            <!-- Chat photo -->
+                            <div class="col-6 col-xl-6">
+                                <div class="media text-center text-xl-left">
+                                    <div class="avatar avatar-sm d-none d-xl-inline-block mr-5">
+                                        <%=image_tag("logo.jpg")%>
+                                    </div>
+
+                                    <h1>MyMSD<em>chat</em></h1>
                                 </div>
-
-                                <h1>MyMSD<em>chat</em></h1>
                             </div>
-                        </div>
-                    </div><!-- .row -->
-                </div>
-            </div>
-            <!-- Chat: Header -->
-            <!-- Chat: Content-->
-            <div class="chat-content px-lg-8">
-                <div class="container-xxl py-6 py-lg-10" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-                  <% @chatroom.messages.each do |message| %>
-
-                    <% partial_bot_or_user = message.user.bot? ? 'left' : 'right' %>
-                    <%= render partial: "messages/message-#{partial_bot_or_user}", locals: { message: message } %>
-                  <% end %>
-                </div>
-
-            </div>
-            <!-- Chat: Content -->
-
-            <!-- Chat: Footer -->
-            <div class="chat-footer border-top py-4 py-lg-6 px-lg-8">
-                <div class="container-xxl">
-                    <div class="col my-5 px-0">
-                        <button class="btn btn-primary rounded-square" type="submit">Yes</button>
-                        <button class="btn btn-primary rounded-square" type="submit">No</button>
-                        <button class="btn btn-primary rounded-square" type="submit">Unsure</button>
+                        </div><!-- .row -->
                     </div>
-                    <%= simple_form_for [ @chatroom, @new_message ], remote: true, id: "chat-id-1-form" do |f| %>
-                      <div class='d-flex'>
-                        <%= f.input :content, label: false, placeholder: "Type your message...", input_html: { class: 'bg-grey border-0' }, wrapper_html: { class: 'w-100 mb-0 mr-5' } %>
-                        <%= button_tag type: 'submit', class: 'btn btn-ico btn-primary rounded-circle col-auto' do %>
-                          <span><i class="fas fa-paper-plane"></i></span>
-                        <% end %>
-                      </div>
-                    <% end %>
                 </div>
-            </div>
+                <!-- Chat: Header -->
+                <!-- Chat: Content-->
+                <div class="chat-content px-lg-8">
+                    <div class="container-xxl py-6 py-lg-10" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+                    <% @chatroom.messages.each do |message| %>
 
-            <!-- Chat: Footer -->
+                        <% partial_bot_or_user = message.user.bot? ? 'left' : 'right' %>
+                        <%= render partial: "messages/message-#{partial_bot_or_user}", locals: { message: message } %>
+                    <% end %>
+                    </div>
+
+                </div>
+                <!-- Chat: Content -->
+
+                <!-- Chat: Footer -->
+                <div class="chat-footer border-top py-4 py-lg-6 px-lg-8">
+                    <div class="container-xxl">
+                        <div class="col my-5 px-0">
+                            <button class="btn btn-primary rounded-square" type="submit">Yes</button>
+                            <button class="btn btn-primary rounded-square" type="submit">No</button>
+                            <button class="btn btn-primary rounded-square" type="submit">Unsure</button>
+                        </div>
+                        <%= simple_form_for [ @chatroom, @new_message ], remote: true, id: "chat-id-1-form" do |f| %>
+                        <div class='d-flex'>
+                            <%= f.input :content, label: false, placeholder: "Type your message...", input_html: { class: 'bg-grey border-0' }, wrapper_html: { class: 'w-100 mb-0 mr-5' } %>
+                            <%= button_tag type: 'submit', class: 'btn btn-ico btn-primary rounded-circle col-auto' do %>
+                            <span><i class="fas fa-paper-plane"></i></span>
+                            <% end %>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+
+                <!-- Chat: Footer -->
+            </div>
+            <!-- Chat: body -->
+
         </div>
-        <!-- Chat: body -->
+        <!-- Chat -->
 
     </div>
-    <!-- Chat -->
+    <!-- Main Content -->
 
-</div>
-<!-- Main Content -->
-
-</div>
+</section>
 <!-- Layout -->
