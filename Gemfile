@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
+gem 'devise'
+gem 'devise-guests'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
