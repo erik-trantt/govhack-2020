@@ -1,6 +1,8 @@
-<div class="message-container" id="message-<%= message.id %>">
+<% user_or_guest_classname = current_or_guest_user.username == "bot" ? "bot" : "user" %>
+<div class="message-container <%= user_or_guest_classname %>-container" id="message-<%= message.id %>">
   <i class="author">
-    <span><%= message.user.username %></span>
+    <span><%= message.user.email %></span>
+    <span><%= user_or_guest_classname %></span>
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
   </i>
   <p><%= message.content %></p>
