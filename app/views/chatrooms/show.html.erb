@@ -1,4 +1,4 @@
-<div class="layout">
+<section class="layout">
     <!-- Main Content -->
     <div class="main main-visible" data-mobile-height="">
 
@@ -17,13 +17,10 @@
                             <div class="col-6 col-xl-6">
                                 <div class="media text-center text-xl-left">
                                     <div class="avatar avatar-sm d-none d-xl-inline-block mr-5">
-                                        <%= image_tag("logo.jpg")%>
+                                        <%=image_tag("logo.jpg")%>
                                     </div>
 
-                                    <div class="media-body align-self-center text-truncate">
-                                        <h6 class="text-truncate mb-n1">Ministry of Social Development</h6>
-                                        <small class="text-muted">Unemployment help</small>
-                                    </div>
+                                    <h1>MyMSD<em>chat</em></h1>
                                 </div>
                             </div>
                         </div><!-- .row -->
@@ -33,11 +30,11 @@
                 <!-- Chat: Content-->
                 <div class="chat-content px-lg-8">
                     <div class="container-xxl py-6 py-lg-10" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-                      <% @chatroom.messages.each do |message| %>
+                    <% @chatroom.messages.each do |message| %>
 
                         <% partial_bot_or_user = message.user.bot? ? 'left' : 'right' %>
                         <%= render partial: "messages/message-#{partial_bot_or_user}", locals: { message: message } %>
-                      <% end %>
+                    <% end %>
                     </div>
 
                 </div>
@@ -46,31 +43,19 @@
                 <!-- Chat: Footer -->
                 <div class="chat-footer border-top py-4 py-lg-6 px-lg-8">
                     <div class="container-xxl">
+                        <div class="col my-5 px-0">
+                            <button class="btn btn-primary rounded-square" type="submit">Yes</button>
+                            <button class="btn btn-primary rounded-square" type="submit">No</button>
+                            <button class="btn btn-primary rounded-square" type="submit">Unsure</button>
+                        </div>
                         <%= simple_form_for [ @chatroom, @new_message ], remote: true, id: "chat-id-1-form" do |f| %>
-                          <div class='d-flex'>
-                            <%= f.input :content, label: false, placeholder: "Type your message...", input_html: { class: 'bg-white border-0' }, wrapper_html: { class: 'w-100 mb-0 mr-5' } %>
+                        <div class='d-flex'>
+                            <%= f.input :content, label: false, placeholder: "Type your message...", input_html: { class: 'bg-grey border-0' }, wrapper_html: { class: 'w-100 mb-0 mr-5' } %>
                             <%= button_tag type: 'submit', class: 'btn btn-ico btn-primary rounded-circle col-auto' do %>
-                              <span class="fe-send"></span>
+                            <span><i class="fas fa-paper-plane"></i></span>
                             <% end %>
-                          </div>
+                        </div>
                         <% end %>
-
-                        <!-- previous form
-                        <form id="chat-id-1-form">
-                            <div class="form-row align-items-center">
-                                <div class="col">
-                                    <div class="input-group">
-                                        <textarea id="chat-id-1-input" class="form-control bg-transparent border-0" placeholder="Type your message..." rows="1" data-emoji-input="" data-autosize="true"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <button class="btn btn-ico btn-primary rounded-circle" type="submit">
-                                        <span class="fe-send"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        -->
                     </div>
                 </div>
 
@@ -84,12 +69,5 @@
     </div>
     <!-- Main Content -->
 
-</div>
+</section>
 <!-- Layout -->
-
-<!-- Scripts -->
-<!-- <script src="assets/js/libs/jquery.min.js"></script>
-  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/plugins/plugins.bundle.js"></script>
-  <script src="assets/js/template.js"></script> -->
-<!-- Scripts -->
