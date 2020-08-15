@@ -12,9 +12,9 @@ const getAnswer = (event) => {
   event.preventDefault();
 
   const input = document.getElementById("chat-id-1-input");
+  console.log('getting answer');
 
   fetch(`/messages`, { 
-    // headers: { accept: 'application/json' },
     headers: {
       'Content-Type': 'application/json',
       accept: 'application/json'
@@ -24,8 +24,8 @@ const getAnswer = (event) => {
   })
   .then(response => response.json())
   .then((data) => {
-    // console.log("We got some data back");
-    // console.log(data);
+    console.log("We got some data back");
+    console.log(data);
     updateMessages(data['question'], data['answer']);
   });
 }
@@ -33,8 +33,9 @@ const getAnswer = (event) => {
 const bindToForm = () => {
   const id = "chat-id-1-form";
   const form = document.getElementById(id);
-
+  
   if (form) {
+    console.log('binded');
     form.addEventListener('submit', getAnswer);
   }
 };
