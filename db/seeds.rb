@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Chatroom.create!(name: 'general')
+bot = User.create(username: 'bot', email: 'chatbot@sample.com', password: '')
+bot.password = "B2ui&*asd.._@"
+bot.save!
