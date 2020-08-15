@@ -46,6 +46,7 @@
                 <!-- Chat: Footer -->
                 <div class="chat-footer border-top py-4 py-lg-6 px-lg-8">
                     <div class="container-xxl">
+                        <!-- previous form
                         <%= simple_form_for [ @chatroom, @new_message ], remote: true, id: "chat-id-1-form" do |f| %>
                           <div class='d-flex'>
                             <%= f.input :content, label: false, placeholder: "Type your message...", input_html: { class: 'bg-white border-0' }, wrapper_html: { class: 'w-100 mb-0 mr-5' } %>
@@ -54,8 +55,9 @@
                             <% end %>
                           </div>
                         <% end %>
+                        -->
 
-                        <!-- previous form
+                        
                         <form id="chat-id-1-form">
                             <div class="form-row align-items-center">
                                 <div class="col">
@@ -70,7 +72,7 @@
                                 </div>
                             </div>
                         </form>
-                        -->
+                        
                     </div>
                 </div>
 
