@@ -1,0 +1,86 @@
+<div class="layout">
+    <!-- Main Content -->
+    <div class="main main-visible" data-mobile-height="">
+
+        <!-- Chat -->
+        <div id="chat-1" class="chat dropzone-form-js" data-dz-url="some.php">
+
+            <!-- Chat: body -->
+            <div class="chat-body">
+
+                <!-- Chat: Header -->
+                <div class="chat-header border-bottom py-4 py-lg-6 px-lg-8">
+                    <div class="container-xxl">
+                        <div class="row align-items-center">
+
+                            <!-- Chat photo -->
+                            <div class="col-6 col-xl-6">
+                                <div class="media text-center text-xl-left">
+                                    <div class="avatar avatar-sm d-none d-xl-inline-block mr-5">
+                                        <%= image_tag("logo.jpg") %>
+                                    </div>
+
+                                    <div class="media-body align-self-center text-truncate">
+                                        <h6 class="text-truncate mb-n1">Ministry of Social Development</h6>
+                                        <small class="text-muted">Unemployment help</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .row -->
+                    </div>
+                </div>
+                <!-- Chat: Header -->
+                <!-- Chat: Content-->
+                <div class="chat-content px-lg-8">
+                    <div class="container-xxl py-6 py-lg-10" id='messages'>
+                        <%= render 'shared/message-left' %>
+                        <%= render 'shared/message-right' %>
+                        <%= render 'shared/message-left' %>
+                        <%= render 'shared/message-right' %>
+                        <%= render 'shared/message-typing' %>
+                    </div>
+                </div>
+                <!-- Chat: Content -->
+
+                <!-- Chat: Footer -->
+                <div class="chat-footer border-top py-4 py-lg-6 px-lg-8">
+                    <div class="container-xxl">
+
+                        <form id="chat-id-1-form">
+                            <div class="form-row align-items-center">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <!-- Textarea -->
+                                        <textarea id="chat-id-1-input" class="form-control bg-transparent border-0" placeholder="Type your message..." rows="1" data-emoji-input="" data-autosize="true"></textarea>
+                                    </div>
+                                </div>
+                                <!-- Submit button -->
+                                <div class="col-auto">
+                                    <button class="btn btn-ico btn-primary rounded-circle" type="submit">
+                                        <span class="fe-send"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Chat: Footer -->
+            </div>
+            <!-- Chat: body -->
+
+        </div>
+        <!-- Chat -->
+
+    </div>
+    <!-- Main Content -->
+
+</div>
+<!-- Layout -->
+
+<!-- Scripts -->
+<!-- <script src="assets/js/libs/jquery.min.js"></script>
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/plugins.bundle.js"></script>
+  <script src="assets/js/template.js"></script> -->
+<!-- Scripts -->
