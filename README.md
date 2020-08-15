@@ -36,7 +36,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="https://github.com/arievdp/"><img src="https://avatars1.githubusercontent.com/u/63568512?s=400&u=52808425006d200bd675d00f95771c9a912e5a5f&v=4" width="100px;" alt=""/><br /><sub><b>Arie van der Poel</b></sub></a><br /><a href="" title="(Code"><sub><b></b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/erik-trantt"><img src="https://avatars0.githubusercontent.com/u/44339322?s=460&u=67b405f2210f1f981efc3e6f55b6b416bed22539&v=4" width="100px;" alt=""/><br /><sub><b>Erik Tran</b></sub></a><br /><a href="" title="Code"><sub><b></b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/csjase"><img src="https://avatars2.githubusercontent.com/u/63567320?s=460&u=4cf040ee43826f9add50eef201c55484a641a076&v=4" width="100px;" alt=""/><br /><sub><b>Prue Singh/b></sub></a><br /><a href="" title=""><sub><b></b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/pruesinghnagra/"><img src="https://avatars0.githubusercontent.com/u/6743181?s=460&u=3b072ac624dde253029d0189b39ef33211fe2dbc&v=4" width="100px;" alt=""/><br /><sub><b>Prue Singh</b></sub></a><br /><a href="" title=""><sub><b></b></sub></a><br /></td>
   </tr>
 </table>
 
