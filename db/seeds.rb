@@ -31,12 +31,12 @@ q_array1 = [
 "Do you have dependent children?",
 "Are you enrolled (or planning to enrol) in full time study at a secondary school, university, college of education, wananga or private training organisation?",
 "How was your employment affected by COVID-19",
-"Have you lived in New Zealand for at least 2 years at any one time since becoming a NZ citizen or permanent resident?"
+"Have you lived in New Zealand for at least 2 years at any one time since becoming a NZ citizen or permanent resident?",
 "Thank you! Based on the answers you've given us, you qualify for COVID-19 Income Relief Payment. Please call Diane on 0800 559 009 and quote the reference number 75346. Diane is expecting your call and has all the information that you've provided."
 ]
 q_array1.each do |q|
   Question.new(content: q)
-  Question.path = Path.find(0)
+  Question.path = Path.find(1)
   Question.save!
 end
 q_array2 = [
@@ -49,7 +49,7 @@ q_array2 = [
 ]
 q_array2.each do |q|
   Question.new(content: q)
-  Question.path = Path.find(1)
+  Question.path = Path.find(2)
   Question.save!
 end
 q_array3 = [
@@ -60,7 +60,7 @@ q_array3 = [
 ]
 q_array3.each do |q|
   Question.new(content: q)
-  Question.path = Path.find(2)
+  Question.path = Path.find(3)
   Question.save!
 end
 q_array4 = [
@@ -70,7 +70,7 @@ q_array4 = [
 ]
 q_array4.each do |q|
   Question.new(content: q)
-  Question.path = Path.find(3)
+  Question.path = Path.find(4)
   Question.save!
 end
 p "Database seeded succesfully!"
