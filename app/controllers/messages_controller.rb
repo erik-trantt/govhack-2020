@@ -5,24 +5,20 @@ class MessagesController < ApplicationController
     path_id = params[:path].to_i - 1
     question_id = params[:question].to_i - 1
     user_input = params[:user_input]
-    text = ''
     end_of_path = false
 
     path = Path.all[path_id.to_i]
-    if path
-      text = path.questions[question_id].content
+    question = path.questions[question_id] if path
+
+    if path && question
+      text = question.content
+      question_partial = render_to_string partial: "messages/message_json_right",
+                                          formats: [:html], layout: false, locals: { message: user_input }
+      answer_partial = render_to_string partial: "messages/message_json_left",
+                                        formats: [:html], layout: false, locals: { message: text }
     else
-      text = path.questions.first.content
+      end_of_path = true
     end
-
-    end_of_path = true if question_id + 1 > path.questions.length
-
-    question_partial = render_to_string partial: "messages/message_json_right",
-                                        formats: [:html], layout: false, locals: { message: user_input }
-    answer_partial = render_to_string partial: "messages/message_json_left",
-                                      formats: [:html], layout: false, locals: { message: text }
-    # puts "I am in #parse"
-    # puts answer_partial
     render json: { question: question_partial, answer: answer_partial, end_of_path: end_of_path }
   end
 

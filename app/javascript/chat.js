@@ -37,31 +37,35 @@ const setNextQuestion = (input) => {
   }
 }
 
+const removePath = (input) => {
+  if (!input) {
+    return;
+  }
+
+  input.removeAttribute("data-path-id");
+  input.removeAttribute("data-question-id");
+}
 
 const getAnswer = (event) => {
   event.preventDefault();
   // console.log(event);
 
   const textEl = event.target.querySelector("#chat-id-1-input");
-  console.log('getting answer');
+  // do nothing when user input nothing
+  if (textEl.value === '') return;
   
   // if textEl.dataset["pathID"] is undefined
-  console.log(textEl.dataset["pathId"]);
   if (textEl.dataset["pathId"] === undefined) {
     // then setPath
-    console.log('set path');
     setPath(textEl, textEl.value);
   } else {
-    console.log('go to next question');
     setNextQuestion(textEl);
   }
   // else getQuestion
-  const attrPathID = "data-path-id";
-  const attrQuestionID = "data-question-id";
-  // construct query inputs
+  //    construct query inputs
   const inputs = {
-    path: textEl.getAttribute(attrPathID),
-    question: textEl.getAttribute(attrQuestionID),
+    path: textEl.getAttribute("data-path-id"),
+    question: textEl.getAttribute("data-question-id"),
     user_input: textEl.value
   }
 
@@ -75,9 +79,13 @@ const getAnswer = (event) => {
   })
   .then(response => response.json())
   .then((data) => {
-    console.log("We got some data back");
-    console.log(data);
-    updateMessages(data['question'], data['answer']);
+    console.log("We got some data back", data);
+    if (!data['end_of_path']) {
+      updateMessages(data['question'], data['answer']);
+    } else {
+      removePath(textEl);
+      showPaths();
+    }
   });
 
   textEl.value = "";
