@@ -1,6 +1,19 @@
 # Team "Gone with the Win"
 
+## Project Description
+In a COVID world, where face-to-face contact may not always possible, how do we ensure that individuals can get the support they need in times of uncertainty?
 
+MyMSDChat is a chatbot solution to help Work and Income New Zealand cope with increased demand on their resources, and gather data about specific cases.
+
+The MyMSDChat app has 3 main functions
+- It ask’s key fielding questions and provide responses and information
+- Provides the user with advice and instruction on what to do
+- And gathers data for case workers
+
+Benefit of using MyMSDChat in this situation:
+- Can feedback to users in realtime without consuming resources
+- Can resolve simple to intermediate requests in realtime
+- Can aggregate data and save to a case number to take the strain of case workers
 
 ## Installation
 This app needs Ruby version 2.6.6 on your computer. If you need help with installing Ruby using `rbenv`, you can follow this [guide](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04#step-1-%E2%80%93-install-rbenv-and-dependencies).
