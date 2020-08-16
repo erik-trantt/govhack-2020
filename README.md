@@ -1,9 +1,11 @@
-# Team "Gone with the Win"
+# MyMSDChat - GovHack 2020 Auckland
 
 Created in 48 hours as part of the GovHack Hackathon
 
 url: http://govhack-auckland-2020.herokuapp.com/
 video: https://youtu.be/gUHin3yojOg
+
+Idea demonstration: https://www.youtube.com/watch?v=gUHin3yojOg&feature=youtu.be
 
 ## Project Description
 In a COVID world, where face-to-face contact may not always possible, how do we ensure that individuals can get the support they need in times of uncertainty?
@@ -27,13 +29,19 @@ This app needs Ruby version 2.6.6 on your computer. If you need help with instal
 ## Setup
 
 ```bash
-git@github.com:erik-trantt/govhack-2020.git
+# clone the repo
+git clone git@github.com:erik-trantt/govhack-2020.git
+
+# install dependencies
 cd govhack-2020
 bundle install
 yarn install --check-files
 
 # run app for first time
 rails db:migrate db:create
+
+# populate sample data
+rails db:seed
 ```
 
 ## Run the app
@@ -41,7 +49,7 @@ rails db:migrate db:create
 # starting the server
 rails server
 
-# shortcut to start the server
+# alternatively, can use this shortcut
 rails s
 ```
 
