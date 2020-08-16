@@ -10,7 +10,7 @@ The MyMSDChat app has 3 main functions
 - Provides the user with advice and instruction on what to do
 - And gathers data for case workers
 
-Benefit of using MyMSDChat in this situation:
+Benefit of using MyMSDChat in this situation
 - Can feedback to users in realtime without consuming resources
 - Can resolve simple to intermediate requests in realtime
 - Can aggregate data and save to a case number to take the strain of case workers
