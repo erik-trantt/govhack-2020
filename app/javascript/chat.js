@@ -79,7 +79,7 @@ const getAnswer = (event) => {
   })
   .then(response => response.json())
   .then((data) => {
-    console.log("We got some data back", data);
+    // console.log("We got some data back", data);
     if (!data['end_of_path']) {
       updateMessages(data['question'], data['answer']);
     } else {
@@ -96,7 +96,7 @@ const bindToForm = () => {
   const form = document.getElementById(id);
 
   if (form) {
-    console.log('binded');
+    // console.log('binded');
     form.addEventListener('submit', getAnswer);
   }
 };
