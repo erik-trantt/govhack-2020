@@ -2,7 +2,6 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-
 const updateMessages = (question, message) => {
   const container = document.getElementById('messages');
   if (!container)
@@ -10,7 +9,10 @@ const updateMessages = (question, message) => {
 
     // console.log("We can insert chat bubble");
   container.insertAdjacentHTML('beforeend', question);
-  container.insertAdjacentHTML('beforeend', message);
+
+  setTimeout(() => {
+    container.insertAdjacentHTML('beforeend', message);
+  }, 2000);
 }
 
 const setPath = (input, pathID) => {
@@ -106,6 +108,7 @@ const showPaths = () => {
   if (!container) {
     return;
   }
+  // sleep(2000);
 
   fetch(`/paths`, {
     headers: {
@@ -117,9 +120,10 @@ const showPaths = () => {
   .then((data) => {
     // console.log("We got some data back");
     // console.log(data);
-    sleep(2000);
-    const html = data["paths"];
-    container.insertAdjacentHTML('beforeend', html);
+    setTimeout(() => {
+      const html = data["paths"];
+      container.insertAdjacentHTML('beforeend', html);
+    }, 2000);
   });
 }
 
