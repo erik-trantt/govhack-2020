@@ -2,9 +2,11 @@
 
 Created in 48 hours as part of the GovHack Hackathon
 
-url: http://govhack-auckland-2020.herokuapp.com/
+Live demo: http://govhack-auckland-2020.herokuapp.com/
 
 Idea demonstration: https://youtu.be/gUHin3yojOg
+
+Hackerspace profile: https://hackerspace.govhack.org/projects/mymsdchat_1010
 
 ## Project Description
 In a COVID world, where face-to-face contact may not always possible, how do we ensure that individuals can get the support they need in times of uncertainty?
